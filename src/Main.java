@@ -1,7 +1,7 @@
 
 
 /**
- *
+ * Main class for run the program.
  * @author Pawat Nakpiphatkul
  * @version 1.0
  * @since May 5, 2017

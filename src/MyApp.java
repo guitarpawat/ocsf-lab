@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 
 
 /**
- *
+ * GUI class for the program.
  * @author Pawat Nakpiphatkul
  */
 public class MyApp extends JFrame implements Observer{
@@ -23,10 +23,19 @@ public class MyApp extends JFrame implements Observer{
     private MyClient client;
     private JTextArea output = new JTextArea(20,20);
     
+    /**
+     * Initialize MyApp.
+     * @param client is an object of client to connect to host.
+     */
     public MyApp(MyClient client) {
         this.client = client;
     }
     
+    /**
+     * Initialize MyApp.
+     * @param host is a host name.
+     * @param port is a port number.
+     */
     public MyApp(String host,int port) {
         this.client = new MyClient(host, port);
         init();
@@ -111,6 +120,11 @@ public class MyApp extends JFrame implements Observer{
         super.add(input,BorderLayout.SOUTH);
     }
 
+    /**
+     * Append message to the JTextArea.
+     * @param o is an Observable object.
+     * @param msg is an Observable object's message.
+     */
     @Override
     public void update(Observable o, Object msg) {
         output.append(msg.toString()+"\n");
